@@ -13,6 +13,14 @@ $(document).keydown(function (e) {
   }
 });
 
+document.querySelector("body").addEventListener("touchstart", function () {
+  if (!started) {
+    $("body").removeClass("game-over");
+    nextSquence();
+    started = true;
+  }
+});
+
 $(".btn").click(function () {
   var userColorChosen = this.id;
   userClickedPatterm.push(userColorChosen);
