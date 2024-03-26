@@ -59,7 +59,7 @@ function checkAnswer(currentLevel) {
     }
   } else {
     var userLevel=level;
-    gamOver();
+    gamOver(userLevel);
     startOver();
   }
 }
