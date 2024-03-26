@@ -58,7 +58,7 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-    console.log("wrong");
+    var userLevel=level;
     gamOver();
     startOver();
   }
@@ -82,10 +82,11 @@ function startOver() {
   started = false;
 }
 
-function gamOver() {
+function gamOver(userLevel) {
   playSound("wrong");
   $("body").addClass("game-over");
   $("h1").text("Game Over, Press Any Key to Restart");
+  $("footer").text("Your score is : "+userLevel);
   setTimeout(function () {
     $("body").removeClass("game-over");
   }, 3000);
